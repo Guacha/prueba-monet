@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'nested_inline',
     'tests.apps.TestsConfig',
     'students.apps.StudentsConfig',
     'django.contrib.admin',
