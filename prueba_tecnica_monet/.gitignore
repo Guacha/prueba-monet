@@ -1,0 +1,11 @@
+# Ignore venv
+venv/
+
+# Ignore .idea
+.idea/
+
+# Ignore .DS_Store
+.DS_Store
+
+# Ignore .pytest_cache
+.pytest_cache/
