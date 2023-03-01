@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <section class="text-gray-400 bg-gray-900 body-font relative">
+        <div class="container px-5 py-24 mx-auto flex sm:flex-nowrap flex-wrap w-1/3">
+            <form method="POST" action="/tests/answertest/{{ test.id }}">
+                <ul>
+                    {% for question in questions %}
+
+                        <li>
+                            <ol>
+                                <h2>{{ question.text }}</h2>
+                                <select required="true" name="{{ question.id }}">
+                                    <option value="">Select answer</option>
+                                    {% for answer in question.answers %}
+                                        <option value="{{ answer.id }}">{{ answer.text }}</option>
+                                    {% endfor %}
+                                </select>
+                            </ol>
+                        </li>
+
+                    {% endfor %}
+
+                </ul>
+            </form>
+        </div>
+    </section>
+
+{% endblock %}
