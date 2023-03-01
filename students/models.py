@@ -1,4 +1,5 @@
 from django.db import models
+from django.conf import settings
 
 
 # Create your models here.
@@ -15,6 +16,9 @@ class Student(models.Model):
 
     # Student has one or many tests, but each test has only one student
     tests = models.ManyToManyField('tests.Test', through='tests.StudentTest')
+
+    # Each student is represented by a Django auth user
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True)
 
     # Student str method: returns student's username
     def __str__(self):

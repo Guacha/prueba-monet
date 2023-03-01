@@ -11,9 +11,6 @@ class Test(models.Model):
     name = models.CharField(max_length=50)
     description = models.CharField(max_length=50)
 
-    # Test has one or many students, but each student has only one test
-    students = models.ManyToManyField('students.Student', through='tests.StudentTest')
-
     # test has one or many questions, but each question has only one test
 
     # Test str method: returns test's name
